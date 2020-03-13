@@ -20,11 +20,7 @@ class Pokemon
       binding.pry
     end
      
-      def self.find(name)
-        sql = "SELECT * FROM pokemon WHERE name = ?"
-        result = DB[:conn].execute(sql, name)[0]
-        Pokemon.new(result[0], result[1], result[2])
-      end
+      
      
       def self.create(name:, type:,db:)
         pokemon = Pokemon.new(name,type,db)
